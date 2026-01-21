@@ -46,14 +46,14 @@ stop.addEventListener("click",
       soundControl("end", "");
     }
     if (timer.textContent.substring(0, 5) === "00:10") {
-      soundControl("start", "sound/stop2_long.mp3"); //サウンド
+      soundControl("start", "sound/stop2.mp3"); //サウンド
 
       const body = document.body;
       body.style.backgroundImage = "url('img/fireworks.gif')";
       body.style.backgroundColor = "rgba(0, 0, 0, 0)";
     }
     else {
-      soundControl("start", "sound/stop1_long.mp3"); //サウンド
+      soundControl("start", "sound/stop1.mp3"); //サウンド
     }
     soundEndflag = "1";
 
@@ -141,9 +141,4 @@ function soundControl(status, w_sound) {
     music.pause();
     music.currentTime = 0;
   }
-}
-let music;
-function soundControl(status, w_sound) {
-  if (music) { music.pause(); music.currentTime = 0; }
-  if (status === "start") new Audio(w_sound).play();
 }
