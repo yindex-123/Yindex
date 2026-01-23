@@ -5,13 +5,9 @@
   <title>Yin Fav Characters</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Nạp Tailwind CSS qua CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Nạp Font Awesome để dùng icon -->
   <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
-  <!-- Cấu hình mở rộng theme cho Tailwind -->
   <script>
     tailwind.config = {
       theme: {
@@ -27,40 +23,30 @@
     }
   </script>
 
-  <!-- Khai báo utility custom cho Tailwind -->
   <style type="text/tailwindcss">
     @layer utilities {
-
-      /* Utility tạo bóng cho chữ */
       .text-shadow {
         text-shadow: 2px 2px 6px rgba(0,0,0,.6);
       }
-
+      .bg-keqing {
+        background: linear-gradient(135deg,#5A3E85,#4A6FA5);
+      }
     }
   </style>
 </head>
 
-<!--
-  BODY
-  - Sử dụng ảnh back1 làm background
-  - bg-cover: phủ kín màn hình
-  - bg-fixed: nền đứng yên khi scroll
--->
-<body
-  class="text-white overflow-x-hidden
-         bg-[url('img/back1.png')]
-         bg-cover bg-center bg-no-repeat bg-fixed">
+<body class="text-white overflow-x-hidden bg-im">
 
-<!-- ===== MENU TRÊN (DẠNG NỔI, KHÔNG CÓ THANH NỀN) ===== -->
+<!-- ===== TOP FLOATING MENU (NO BAR) ===== -->
 <div class="absolute top-6 left-0 w-full z-30">
   <div class="grid grid-cols-3 items-center px-8">
 
-    <!-- KHU VỰC TRÁI: LOGO -->
+    <!-- LEFT -->
     <div class="justify-self-start">
       <img src="img/5290.png" class="h-8" alt="Logo">
     </div>
 
-    <!-- KHU VỰC GIỮA: MENU CHÍNH -->
+    <!-- CENTER -->
     <nav class="justify-self-center hidden md:flex space-x-8 text-sm tracking-widest">
       <a class="opacity-60 hover:opacity-100">WORLD</a>
       <a class="font-bold border-b-2 border-purple-300">
@@ -71,7 +57,7 @@
       <a class="opacity-60 hover:opacity-100">SPECIAL</a>
     </nav>
 
-    <!-- KHU VỰC PHẢI: ICON MXH + NGÔN NGỮ -->
+    <!-- RIGHT -->
     <div class="justify-self-end flex items-center space-x-4 opacity-70">
       <i class="fa fa-facebook hover:opacity-100 cursor-pointer"></i>
       <i class="fa fa-youtube-play hover:opacity-100 cursor-pointer"></i>
@@ -82,24 +68,27 @@
   </div>
 </div>
 
-<!-- ===== MENU DỌC BÊN TRÁI (ĐIỀU HƯỚNG TAB) ===== -->
+<!-- ===== LEFT NAV ===== -->
 <div class="absolute left-8 top-1/2 -translate-y-1/2 z-20 flex flex-col space-y-4 text-sm tracking-widest">
   <div id="nav-profile" class="cursor-pointer font-bold">&lt; PROFILE &gt;</div>
   <div id="nav-story" class="cursor-pointer opacity-60">STORY</div>
   <div id="nav-outfits" class="cursor-pointer opacity-60">OUTFITS</div>
 </div>
 
-<!-- ===== TRANG PROFILE ===== -->
+<!-- ===== PROFILE ===== -->
 <section id="page-profile" class="min-h-screen flex items-center px-8 pt-32">
   <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center">
 
-    <!-- ẢNH NHÂN VẬT -->
-    <img src="img/keqing.png" class="md:w-1/2" alt="Keqing">
+    <!-- IMAGE -->
+    <img
+      src="img/keqing.png" class="md:w-1/2"
+      alt="Keqing"
+    >
 
-    <!-- THÔNG TIN NHÂN VẬT -->
+    <!-- TEXT -->
     <div class="md:w-1/2 md:pl-12">
 
-      <!-- TIÊU ĐỀ PHỤ -->
+      <!-- Driving Thunder -->
       <div class="flex items-center justify-center md:justify-start mb-6">
         <div class="h-px bg-white/40 flex-grow max-w-xs"></div>
         <span class="mx-4 text-sm tracking-widest text-white/80">
@@ -108,12 +97,12 @@
         <div class="h-px bg-white/40 flex-grow max-w-xs"></div>
       </div>
 
-      <!-- TÊN NHÂN VẬT -->
+      <!-- Name -->
       <h1 class="text-6xl font-bold text-shadow mb-6">
         Keqing
       </h1>
 
-      <!-- THÔNG TIN CƠ BẢN -->
+      <!-- Info -->
       <div class="grid grid-cols-2 gap-y-3 text-sm text-white/90">
         <p><span class="font-semibold">Gender:</span> Female</p>
         <p><span class="font-semibold">Birthday:</span> November 20th</p>
@@ -127,18 +116,17 @@
   </div>
 </section>
 
-<!-- ===== TRANG STORY ===== -->
+<!-- ===== STORY ===== -->
 <section id="page-story" class="hidden min-h-screen flex items-center px-8 pt-32">
   <div class="max-w-4xl mx-auto">
     <h2 class="text-4xl font-bold mb-6">Story</h2>
     <p class="text-gray-200 leading-relaxed">
-      As the Yuheng of the Liyue Qixing, she is someone who seeks her own answers
-      instead of idly letting chaos run amok in Liyue.
+      As the Yuheng of the Liyue Qixing, she is someone who seeks her own answers instead of idly letting chaos run amok in Liyue. She chooses her own path with her own power and ability, instead of letting the gods determine her fate.
     </p>
   </div>
 </section>
 
-<!-- ===== TRANG OUTFITS ===== -->
+<!-- ===== OUTFITS ===== -->
 <section id="page-outfits" class="hidden min-h-screen flex items-center px-8 pt-32">
   <div class="max-w-4xl mx-auto">
     <h2 class="text-4xl font-bold mb-6">Outfits</h2>
@@ -150,42 +138,19 @@
   </div>
 </section>
 
-<!-- ===== SCRIPT XỬ LÝ CHUYỂN TAB ===== -->
 <script>
-
-  // Danh sách các tab
-  const tabs = ['profile','story','outfits']
-
-  // Gán sự kiện click cho từng tab
-  tabs.forEach(tab => {
-
-    document.getElementById('nav-' + tab).onclick = () => {
-
-      // Lặp qua tất cả tab để reset trạng thái
-      tabs.forEach(t => {
-
-        // Ẩn toàn bộ nội dung trang
-        document.getElementById('page-' + t).classList.add('hidden')
-
-        // Xóa trạng thái active của menu
-        document.getElementById('nav-' + t)
-          .classList.remove('font-bold','opacity-100')
-
-        // Làm mờ menu không được chọn
-        document.getElementById('nav-' + t)
-          .classList.add('opacity-60')
-      })
-
-      // Hiển thị trang được click
-      document.getElementById('page-' + tab)
-        .classList.remove('hidden')
-
-      // Đánh dấu menu đang active
-      document.getElementById('nav-' + tab)
-        .classList.add('font-bold','opacity-100')
-    }
-  })
-
+const tabs = ['profile','story','outfits']
+tabs.forEach(t=>{
+  document.getElementById('nav-'+t).onclick=()=>{
+    tabs.forEach(x=>{
+      document.getElementById('page-'+x).classList.add('hidden')
+      document.getElementById('nav-'+x).classList.remove('font-bold','opacity-100')
+      document.getElementById('nav-'+x).classList.add('opacity-60')
+    })
+    document.getElementById('page-'+t).classList.remove('hidden')
+    document.getElementById('nav-'+t).classList.add('font-bold','opacity-100')
+  }
+})
 </script>
 
 </body>
