@@ -24,9 +24,6 @@ body{
     sans-serif;
     text-align: center;
     background-image: url(../img/1234.png);
-    background-size: 1280px, 720px;
-    background-repeat: no-repeat;
-    background-position: center; 
 }
 
 header, footer, h1, h2, h3, p, div, .container01, .filler01 {
@@ -160,6 +157,7 @@ footer> p {
     }
 
 }
+
 
 
 
