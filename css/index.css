@@ -408,27 +408,13 @@ footer> p {
     }
 } 
 
-/* ===== ICON ĐỀU NHAU ===== */
-
-.icon-item {
-  width: 180px;
-  text-align: center;
-}
-
-.icon-item img {
-  width: 120px;
-  height: 120px;
-  object-fit: contain;
-  display: block;
-  margin: 0 auto 8px;
-}
-
-/* nếu muốn canh các icon cùng hàng */
 .container01-01,
 .container01-02,
 .container01-03,
 .container01-04 {
-  display: flex;
-  gap: 30px;
-  flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly; /* ← quan trọng */
+    align-items: flex-start;
+    gap: 0;                         /* không tạo khung giả */
 }
